@@ -12,29 +12,31 @@ namespace JWTConsoleApp
         protected   String Method;
                     Uri Url;
                     Uri BaseUrl;
+
+                    String CanonicalVerb;
                     String CanonicalUrl;
                     String CanonicalQuery;
 
 
         public URICanonicalizer(String Method, String BaseUrl, String AbsoluteUrl)
         {
-            this.Method = Method.ToUpper();
+            this.Method = Method;
             this.Url = new Uri(AbsoluteUrl);
             this.BaseUrl = new Uri(BaseUrl);
 
+            CanonicalizeVerb();
             CanonicalizeUrl();
             CanonicalizeQuery();
         }
 
         public String MakeCanonicalUrl()
         {
-            String sCanonical = Method;
+            String sCanonical = CanonicalVerb;
             if (CanonicalUrl != "")
                 sCanonical += "&" + CanonicalUrl;
             if (CanonicalQuery != "")
                 sCanonical += "&" + CanonicalQuery;
             return sCanonical;
-            //return Method + "&" + CanonicalUrl + "&" + CanonicalQuery;
         }
         public String QueryStringHash()
         {
@@ -48,6 +50,10 @@ namespace JWTConsoleApp
             return hash.ToString();
         }
 
+        protected void CanonicalizeVerb()
+        {
+            CanonicalVerb = Method.ToUpper();
+        }
         protected void  CanonicalizeUrl()
         {
             String res = "";
@@ -108,11 +114,11 @@ namespace JWTConsoleApp
             }
             SortedDictionary<String, String[]> sDic = new SortedDictionary<String,String[]>(dic);
             //ignore jwt
+            sDic.Remove("jwt");
             //urlencode keys
             //urlencode values
             //sort keys
             //group same params by ,
-            sDic.Remove("jwt");
             List<String> lOutQuery = new List<String>();
             foreach(KeyValuePair<String, String[]> par in sDic)
             {
