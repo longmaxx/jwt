@@ -5,6 +5,7 @@
 
 # JWTConsoleApp
 Console app helps generate JWT string.
+
 Usage parameters:
    /secret: - your secret key. Required parameter.
    /accesskey: - your API access key. Required parameter.
