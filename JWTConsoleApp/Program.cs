@@ -28,10 +28,6 @@ namespace JWTConsoleApp
 
             Dictionary<string, object> payload = new Dictionary<string, object>();
 
-
-            Uri u = new Uri("https://yandex.ru/abc/1/users?id=12&p=dedpihto");
-            string u2 = u.ToString();
-
             if (CommandLine.Parameters.Count == 0)
             {
                 Console.WriteLine("Command line:");
