@@ -3,7 +3,21 @@
 [![Build status](https://abatishchev.visualstudio.com/Jwt.Net/_apis/build/status/Jwt.Net-CI)](https://abatishchev.visualstudio.com/Jwt.Net/_build/latest?definitionId=1)
 [![Release status](https://abatishchev.vsrm.visualstudio.com/_apis/public/Release/badge/e509bcc0-b8df-4458-a29e-846c6f45ec01/1/1)](https://abatishchev.visualstudio.com/Jwt.Net/_releases2?definitionId=1&_a=releases)
 
-# Jwt.Net, a JWT (JSON Web Token) implementation for .NET
+# JWTCOnsoleApp
+Console app helps generate JWT string.
+Usage parameters:
+   /secret: - your secret key. Required parameter.
+   /accesskey: - your API access key. Required parameter.
+   /live: - token live time in milliseconds.
+ Parameter group to generate QSH claim. Needed for altassian API.
+   /verb: - Http method. (GET, POST, etc.)
+   /url:  - Url with query parameters.
+   /baseurl: - API base url.
+ You can omit this group of parameters and set /qsh and other payload parameters directly.
+
+Application output: JWT token.
+
+ a JWT (JSON Web Token) implementation for .NET
 
 This library supports generating and decoding [JSON Web Tokens](https://tools.ietf.org/html/rfc7519).
 
