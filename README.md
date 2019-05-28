@@ -3,7 +3,7 @@
 [![Build status](https://abatishchev.visualstudio.com/Jwt.Net/_apis/build/status/Jwt.Net-CI)](https://abatishchev.visualstudio.com/Jwt.Net/_build/latest?definitionId=1)
 [![Release status](https://abatishchev.vsrm.visualstudio.com/_apis/public/Release/badge/e509bcc0-b8df-4458-a29e-846c6f45ec01/1/1)](https://abatishchev.visualstudio.com/Jwt.Net/_releases2?definitionId=1&_a=releases)
 
-# JWTCOnsoleApp
+# JWTConsoleApp
 Console app helps generate JWT string.
 Usage parameters:
    /secret: - your secret key. Required parameter.
